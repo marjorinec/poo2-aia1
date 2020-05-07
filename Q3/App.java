@@ -4,8 +4,4 @@ Comparable).
 Adicionado o recurso, altere o programa acima para este exiba o array antes da ordenação
 e após a ordenação. */
 
-public class App {
-  public static void main(String[] args) {
-
-  }
-}
+Está nas outras questões

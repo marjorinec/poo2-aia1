@@ -44,4 +44,15 @@ public class DisciplinaTrimestral extends Disciplina {
 
     return notaFinal;
   }
+
+  String toString() { //Questão 2
+    String nomeStr = "Nome: " + getNome();
+    String periodoStr = "Período: " + getPeriodo();
+    String nota1Str = "Nota 1: " + getNota1();
+    String nota2Str = "Nota 2: " + getNota2();
+
+    String infos = nomeStr + ", " + periodoStr + ", " + nota1Str + ", " + nota2Str;
+
+    return infos;
+  }
 }

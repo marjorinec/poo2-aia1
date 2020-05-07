@@ -12,11 +12,15 @@ e após a ordenação. */
 
 import java.util.Scanner;
 
-public class App{
+public class App {
   public static void main(String[] args) {
     int qtdDisciplinas;
     Disciplina[] disciplinas;
     String auxDisciplina;
+    String nome;
+    int periodo;
+    double nota1;
+    double nota2;
 
     System.out.println("Quantas disciplinas terão dados adicionados?");
     qtdDisciplinas = scan.nextInt();
@@ -26,16 +30,24 @@ public class App{
     for (int qtd = 0; qtd < qtdDisciplinas; qtd++) {
       System.out.printf("Digite os dados da %d° disciplina", qtd+1);
         try {
-          auxDisciplina = scan.next();
+          System.out.print("Nome: ");
+          nome = scan.next();
+          System.out.print("Período: ");
+          periodo = scan.nextInt();
+          System.out.print("Nota 1: ");
+          nota1 = scan.nextDouble();
+          System.out.print("Nota 2: ");
+          nota2 = scan.nextDouble();
+
+          disciplinas[qtd] = new Disciplina(nome, periodo, nota1, nota2);
         } catch (InputMismatchException e) {
           System.out.println("Entrada de dados Inválida!");
           System.exit(0);
         }
         
-        disciplinas[qtd] = new Disciplina(auxDisciplina);
       }
       
-      System.out.println(disciplinas.toString());
+      System.out.println(disciplinas.toString()); //Questão 3
       Array.sort(disciplinas);
       System.out.println(disciplinas.toString());
   }

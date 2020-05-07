@@ -10,11 +10,18 @@ Comparable).
 Adicionado o recurso, altere o programa acima para este exiba o array antes da ordenação
 e após a ordenação. */
 
-public class Disciplina implements Comparable<Disciplina>{ //Questão 3
+public class Disciplina implements Comparable<Disciplina> { //Questão 3
   String nome;
   int periodo;
   double nota1;
   double nota2;
+
+  public Disciplina (String nome, int periodo, double nota1, double nota2) {
+    this.nome = nome;
+    this.periodo = periodo;
+    this.nota1 = nota1;
+    this.nota2 = nota2;
+  }
 
   double avaliacao() {
     double notaFinal = (nota1+nota2)/2.0;
@@ -32,15 +39,9 @@ public class Disciplina implements Comparable<Disciplina>{ //Questão 3
     return infos;
   }
 
-  public int compareTo(Disciplina d) {
+  public int compareTo(Disciplina d) { //Questão 3
     double av = avaliacao();
     double aval = d.avaliacao();
-    if (av == aval) {
-      return 0;
-    } else if (av > aval) {
-      return 1;
-    } else {
-      return -1;
-    }
+    return av > aval;
   }
 }
